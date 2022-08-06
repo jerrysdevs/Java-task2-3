@@ -33,11 +33,8 @@ public class Getalldata {
 		return jsonArray;
 	}
 
-	public static void main(String[] args) {
+	public void getdata(String url,String user,String password) {
 		String newLine = System.getProperty("line.separator");
-		String url = "jdbc:mysql://localhost:3306/employees?useSSL=false";
-		String user = "root";
-		String password = "password";
 		System.out.println("Please enter the Employee Type"+ newLine +"Permanent Employee : 1"+ newLine +"Contract Employee : 2"+ newLine +"Parttime Employee :3"+ newLine +"all Employee: 0");
 		String query = "";
 		Scanner inp = new Scanner(System.in);
@@ -58,11 +55,14 @@ public class Getalldata {
 				JSONArray result = convert(rs);
 //				demoLogger.info(result);
 				System.out.println(result);
-//				demoLogger.info("The string was split into {}", (Object) r);;
 			}
 
 		} catch (Exception e) {
 			demoLogger.error(e);
 		}
 	}
+//	public static void main(String[] args) {
+//	getdata();
+//}
+
 }
